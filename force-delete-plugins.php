@@ -11,6 +11,11 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: force-delete-plugins
 */
 
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
 add_action( 'admin_init', function(){
 
 	if ( ! current_user_can('activate_plugins') )
