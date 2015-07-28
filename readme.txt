@@ -1,13 +1,13 @@
 === Force Delete Plugins ===
 Contributors: jancbeck
-Tags: administration, plugin management
+Tags: administration, plugin management, development, tools
 Requires at least: 4.2
 Tested up to: 4.2
 Stable tag: 4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Changes the default behavior of the bulk delete plugin actions so it deletes plugins regardless whether they are active or not. Helpful for site developers.
+Changes the default behavior of the bulk delete plugin actions so it deletes plugins regardless whether they are active or not.
 
 == Installation ==
 
