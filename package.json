@@ -1,0 +1,32 @@
+{
+  "name": "force-delete-plugins",
+  "version": "1.0.0",
+  "description": "WordPress plugin that changes the default behavior of the bulk delete plugin actions so it deletes plugins regardless whether they are active or not. Helpful for site developers.",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt-wp-plugin": "^1.0.3",
+    "grunt": "^0.4.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jancbeck/force-delete-plugins.git"
+  },
+  "keywords": [
+    "wordpress",
+    "administration",
+    "plugin",
+    "management",
+    "development",
+    "tools"
+  ],
+  "author": "jancbeck",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/jancbeck/force-delete-plugins/issues"
+  },
+  "homepage": "https://github.com/jancbeck/force-delete-plugins#readme"
+}
