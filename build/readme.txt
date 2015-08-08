@@ -3,7 +3,7 @@ Contributors: jancbeck
 Tags: administration, plugin management, development, tools
 Requires at least: 4.0
 Tested up to: 4.3
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,6 +23,9 @@ To install the plugin and get it working:
 I was annoyed by the default behavior of WordPress and wanted to fix it. It's also an excuse to publish a WP plugin in the .org Repo.
 
 == Changelog ==
+
+= 1.0.1 =
+* Added WP 4.3 compatibility
 
 = 1.0.1 =
 * Added WP.org repository assets

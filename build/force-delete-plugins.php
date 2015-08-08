@@ -3,7 +3,7 @@
 Plugin Name: Force Delete Plugins
 Plugin URI:  https://wordpress.org/plugins/force-delete-plugins/
 Description: Changes the default behavior of the bulk delete plugin actions so it deletes plugins regardless whether they are active or not. Helpful for site developers.
-Version:     1.0.1
+Version:     1.0.2
 Author:      Jan Beck
 Author URI:  http://jancbeck.com
 License:     GPL2
