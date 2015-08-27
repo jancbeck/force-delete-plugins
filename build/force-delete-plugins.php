@@ -16,7 +16,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-add_action( 'admin_init', function(){
+add_action( 'current_screen', function(){
 
 	if ( ! current_user_can('activate_plugins') )
 		wp_die(__('You do not have sufficient permissions to deactivate plugins for this site.'));
