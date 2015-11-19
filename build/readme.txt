@@ -2,8 +2,8 @@
 Contributors: jancbeck
 Tags: administration, plugin management, development, tools
 Requires at least: 4.0
-Tested up to: 4.3
-Stable tag: 1.0.2
+Tested up to: 4.4
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,7 +24,10 @@ I was annoyed by the default behavior of WordPress and wanted to fix it. It's al
 
 == Changelog ==
 
-= 1.0.1 =
+= 1.0.3 =
+* Added WP 4.4 compatibility
+
+= 1.0.2 =
 * Added WP 4.3 compatibility
 
 = 1.0.1 =
