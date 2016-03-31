@@ -1,5 +1,5 @@
 module.exports = function( grunt ) {
-	
+
 	grunt.initConfig({
 	  wp_plugin: {
 	    deploy: {
@@ -19,8 +19,8 @@ module.exports = function( grunt ) {
 	    },
 	  },
 	  phpunit: {
-      classes: {} 
-    }
+		  classes: {} 
+		}
 	});
 
 	grunt.loadNpmTasks( 'grunt-wp-plugin' );
@@ -28,9 +28,12 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( 'grunt-phpunit' );
 
 	// Register tasks
-  grunt.registerTask('tests', [
-    'phpunit'
-  ]);
+	grunt.registerTask('tests', [
+		'phpunit'
+	]);
+	grunt.registerTask('deploy', [
+		'tests', 'wp_plugin'
+	]);
 
 };
 
