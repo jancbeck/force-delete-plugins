@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function( grunt ) {
 	
 	grunt.initConfig({
 	  wp_plugin: {
@@ -10,10 +10,27 @@ module.exports = function(grunt) {
 	        svn_username: 'jancbeck'
 	      }
 	    }
-	  }
+	  },
+	  watch: {
+			files: ['build/**/*'],
+			tasks: ['phpunit'],
+			options: {
+	      debounceDelay: 2000,
+	    },
+	  },
+	  phpunit: {
+      classes: {}
+    }
 	});
 
 	grunt.loadNpmTasks( 'grunt-wp-plugin' );
+	grunt.loadNpmTasks( 'grunt-contrib-watch' );
+	grunt.loadNpmTasks( 'grunt-phpunit' );
+
+	// Register tasks
+  grunt.registerTask('tests', [
+    'phpunit'
+  ]);
 
 };
 

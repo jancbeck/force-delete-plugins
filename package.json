@@ -8,6 +8,8 @@
     "grunt": "^0.4.5"
   },
   "devDependencies": {
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-phpunit": "^0.3.6",
     "grunt-wp-plugin": "^1.0.3"
   },
   "scripts": {
