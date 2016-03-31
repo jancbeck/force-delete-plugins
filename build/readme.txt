@@ -2,8 +2,8 @@
 Contributors: jancbeck
 Tags: administration, plugin management, development, tools
 Requires at least: 4.0
-Tested up to: 4.4
-Stable tag: 1.0.3
+Tested up to: 4.5
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,10 +19,14 @@ To install the plugin and get it working:
 
 == Frequently Asked Questions ==
 
-= Why does this plugin exist?
-I was annoyed by the default behavior of WordPress and wanted to fix it. It's also an excuse to publish a WP plugin in the .org Repo.
+= Why does this plugin exist? =
+I was annoyed by the default behavior of WordPress and wanted to fix it. It's also an excuse to publish a WP plugin in the .org Repo and experiment with PHPunit.
 
 == Changelog ==
+
+= 1.0.4 =
+* Added WP 4.5 compatibility
+* Added PHPunit tests
 
 = 1.0.3 =
 * Added WP 4.4 compatibility

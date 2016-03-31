@@ -38,6 +38,9 @@ class ForceDeletePluginsTests extends WP_UnitTestCase {
 	}
 
 	function test_user_caps() {
+		if ( is_multisite()) {
+			return;
+		}
 		$user_can = user_can( self::$users['administrator'], 'activate_plugins' );
 		$this->assertTrue( can_force_delete_plugins( $user_can, self::$nonce, self::$action, self::$plugins ) );
 
