@@ -12,14 +12,14 @@ module.exports = function( grunt ) {
 	    }
 	  },
 	  watch: {
-			files: ['build/**/*'],
+			files: ['build/**/*', 'tests/**/*'],
 			tasks: ['phpunit'],
 			options: {
 	      debounceDelay: 2000,
 	    },
 	  },
 	  phpunit: {
-      classes: {}
+      classes: {} 
     }
 	});
 

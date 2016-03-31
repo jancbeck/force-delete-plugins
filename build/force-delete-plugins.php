@@ -16,27 +16,51 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-add_action( 'current_screen', function(){
+/**
+ *  Hooks into WordPress
+ */
+add_action( 'current_screen', function() {
 
-	if ( ! current_user_can('activate_plugins') )
-		wp_die(__('You do not have sufficient permissions to deactivate plugins for this site.'));
-
-	$wp_list_table = _get_list_table('WP_Plugins_List_Table');
-
-	$action = $wp_list_table->current_action();
-
-	if ( 'delete-selected' !== $action ) {
-		return;
+	$user_can   = current_user_can( 'activate_plugins');
+	$action     = _get_list_table('WP_Plugins_List_Table')->current_action();
+	$plugins    = isset( $_POST['checked'] ) ? (array) $_POST['checked'] : array();
+	$referer    = wp_verify_nonce( isset( $_REQUEST['_wpnonce'] ) ? $_REQUEST['_wpnonce'] : null, 'bulk-plugins' );
+	
+	$can_force_delete_plugins = can_force_delete_plugins( $user_can, $referer, $action, $plugins );
+	
+	if ( ! is_wp_error( $can_force_delete_plugins ) ) {
+		deactivate_plugins( $plugins, false, is_network_admin() );
 	}
-
-	check_admin_referer('bulk-plugins');
-
-	$plugins = isset( $_POST['checked'] ) ? (array) $_POST['checked'] : array();
-
-	deactivate_plugins( $plugins, false, is_network_admin() );
 
 } );
 
-function testing_tests() {
-	return false;
+/**
+ *  Checks if user tried to deactivate plugins
+ *
+ *  @param   bool  $user_can
+ *  @param   bool  $referer
+ *  @param   string  $action
+ *  @param   array  $plugins
+ *
+ *  @return  bool|WP_Error
+ */
+function can_force_delete_plugins( $user_can, $referer, $action, $plugins = array() ) {
+
+	if ( ! $user_can ) {
+		return new WP_Error( 'user_can', 'You are not allowed to deactivate plugins.', $user_can );
+	}
+
+	if ( ! $referer ) {
+		return new WP_Error( 'referer', 'Invalid request.', $referer );
+	}
+
+	if ( 'delete-selected' !== $action ) {
+		return new WP_Error( 'action', 'Invalid action: ', $action );
+	}
+
+	if ( empty( $plugins )) {
+		return new WP_Error( 'plugins', 'No plugins to deactivate.', $plugins );
+	}
+
+	return true;
 }
