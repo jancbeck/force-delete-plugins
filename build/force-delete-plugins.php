@@ -36,3 +36,7 @@ add_action( 'current_screen', function(){
 	deactivate_plugins( $plugins, false, is_network_admin() );
 
 } );
+
+function testing_tests() {
+	return false;
+}
